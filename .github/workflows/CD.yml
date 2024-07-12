@@ -38,3 +38,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Deploy 
+      run: |
+        helm upgrade --install my-release ./hello --set repository.image=rmbkva/python-app --set repository.tag=1.0.0
+
